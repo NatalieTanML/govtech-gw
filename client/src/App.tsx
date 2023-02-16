@@ -1,8 +1,13 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
+import Input from './components/input/Input';
 
 function App() {
-  return <h1 className='text-3xl font-bold underline'>Hello world!</h1>;
+  return (
+    <div>
+      <Input />
+    </div>
+  );
 }
 
 export default App;
