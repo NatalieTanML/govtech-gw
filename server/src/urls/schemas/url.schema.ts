@@ -1,10 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 
-export type LinkDocument = HydratedDocument<Link>;
+export type UrlDocument = HydratedDocument<Url>;
 
 @Schema()
-export class Link {
+export class Url {
   @Prop({ required: true })
   shortUrl: string;
 
@@ -12,4 +12,4 @@ export class Link {
   longUrl: string;
 }
 
-export const LinkSchema = SchemaFactory.createForClass(Link);
+export const UrlSchema = SchemaFactory.createForClass(Url);
