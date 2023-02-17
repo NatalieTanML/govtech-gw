@@ -18,7 +18,7 @@ export class UrlsService {
 
     const shortUrl = generateShortUrl();
 
-    const check = this.getLongUrl(shortUrl);
+    const check = await this.getLongUrl(shortUrl);
     if (check) {
       // URL was already shortened previously, we can return it
       return check;
