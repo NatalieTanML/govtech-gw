@@ -1,7 +1,7 @@
-import { IsString, IsNotEmpty } from 'class-validator';
+import { IsUrl, IsNotEmpty } from 'class-validator';
 
 export class CreateUrlDto {
-  @IsString()
+  @IsUrl()
   @IsNotEmpty()
   readonly longUrl: string;
 }
