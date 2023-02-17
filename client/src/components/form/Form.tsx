@@ -14,6 +14,7 @@ const Form = () => {
     if (!isURL(longUrl)) {
       e.stopPropagation();
       alert('Please enter a valid URL.');
+      return;
     }
 
     try {
