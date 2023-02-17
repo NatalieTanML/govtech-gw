@@ -1,44 +1,46 @@
-# Getting Started
+# URL Shortener
 
-Make sure you have node version 16 installed.
+This is a web application that allows users to shorten URLs. It includes a frontend built with React and a backend built with NestJS, with MongoDB as the database.
 
-Clone the repository and install dependencies.
+## Setup
 
+Ensure you have [node version 16](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and [MongoDB installed](https://www.mongodb.com/docs/manual/installation/).
+
+To set up the project locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/NatalieTanML/govtech-gw.git` and run `cd govtech-gw`
+2. Install the dependencies for the server: `cd server` and run `npm install`
+3. Install the dependencies for the client: `cd ../client` and run `npm install`
+4. Create a `.env` file in `./server` and add the following environment variables:
 ```
-# Clone the repo
-git clone https://github.com/NatalieTanML/govtech-gw
-
-# Navigate to project folder
-cd govtech-gw
+DB_HOST=localhost
+DB_PORT=27017
+DB_NAME=govtechgw
 ```
+5. Run MongoDB as a service.
 
-## Frontend
+## Usage
 
-Navigate to the frontend and install the dependencies.
+To start the server, run the following on the terminal: 
 ```
-# Install client dependencies
-cd client
-npm install
-```
-
-## Backend
-
-Open a separate terminal from the `govtech-gw` folder and navigate to the backend.
-
-```
-# Install server dependencies
-cd server
-npm install
-```
-
-## Running Locally
-
-On the backend terminal, run the following:
-```
+cd ../server
 npm run start:dev
 ```
 
-On the frontend terminal, run the following:
+To start the client, run the following in another terminal: 
 ```
+cd ../client
 npm start
 ```
+
+The server will run on `http://localhost:5000` and the client will run on `http://localhost:3000`.
+
+## Tests
+
+To run the tests, run:
+```
+cd ../server
+npm run test
+```
+
+This will run the tests and output the results in the terminal.
