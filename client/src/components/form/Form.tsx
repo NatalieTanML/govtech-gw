@@ -27,7 +27,7 @@ const Form = () => {
       setShortUrl('http://localhost:5000/' + response.data);
     } catch (error) {
       console.log(error);
-      return 'An unexpected error occurred.';
+      alert('An unexpected error occurred.');
     }
   };
 

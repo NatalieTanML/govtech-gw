@@ -16,15 +16,14 @@ export class UrlsService {
       throw new BadRequestException('Input must be a valid URL.');
     }
 
-    const shortUrl = generateShortUrl();
-
-    const check = await this.getLongUrl(shortUrl);
+    const check = await this.getShortUrl(longUrl);
     if (check) {
       // URL was already shortened previously, we can return it
       return check;
     }
 
     // Else, create a new record in database
+    const shortUrl = generateShortUrl();
     const createdUrl = new this.urlModel({ shortUrl, longUrl });
     createdUrl.save();
     return shortUrl;
