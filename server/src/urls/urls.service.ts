@@ -3,7 +3,7 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Url, UrlDocument } from './schemas/url.schema';
 import { CreateUrlDto } from './dto/create-url.dto';
-import { generateShortUrl } from 'src/utils/url';
+import { generateShortUrl } from '../utils/url';
 import { isURL } from 'class-validator';
 
 @Injectable()

@@ -23,7 +23,6 @@ const Form = () => {
         { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
       );
 
-      console.log(response.data);
       setShortUrl('http://localhost:5000/' + response.data);
     } catch (error) {
       console.log(error);
