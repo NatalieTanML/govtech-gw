@@ -20,4 +20,9 @@ export class LinksService {
     const link = await this.linkModel.findOne({ longUrl }).exec();
     return link.shortUrl;
   }
+
+  async getLongUrl(shortUrl: string): Promise<string> {
+    const link = await this.linkModel.findOne({ shortUrl }).exec();
+    return link.longUrl;
+  }
 }

@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Logger, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { CreateLinkDto } from './dto/create-link.dto';
 import { LinksService } from './links.service';
 
@@ -12,7 +12,12 @@ export class LinksController {
   }
 
   @Get(':longUrl')
-  async findOne(@Param('longUrl') longUrl: string): Promise<string> {
+  async findByLong(@Param('longUrl') longUrl: string): Promise<string> {
     return this.linksService.getShortUrl(longUrl);
+  }
+
+  @Get(':shortUrl')
+  async findByShort(@Param('shortUrl') shortUrl: string): Promise<string> {
+    return this.linksService.getLongUrl(shortUrl);
   }
 }
